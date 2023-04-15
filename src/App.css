@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .2s;
+  font-family: 'Poppins', sans-serif; 
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root{
+  --main: #283618;
+  --prim: #bc6c25;
+  --white: #fff;
+  --blackl: #111; 
 }
-
-.App-header {
-  background-color: #282c34;
+body{
+  overflow-x: hidden;
+  min-height: 100vh;  
+  width: 100%;
+  background-color: var(--main);
+  color: var(--white);
+}
+.btn{
+  padding: 10px 20px;
+  background-color: var(--prim);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  margin: 10px;
+  cursor: pointer;
+}
+button:hover{
+  scale: 1.1;
+}
+button:active{
+  scale: 1.15;
+}
+.wrapper{
+  max-width: 1000px;
+  padding: 10px;
+  margin: 0 auto;
   min-height: 100vh;
+}
+.heading{
+  text-align: center;
+  margin: 10px 0;
+}
+.addTodos{
+  margin: 10px auto;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+}
+.input-field{
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 500px;
+}
+.displayTodos{
+  margin: 0 auto;
+  width: 100%;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todos{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  row-gap: 40px;
+}
+.todos .todo{
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.todo-title{
+  resize: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 2px solid #111;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  width: 100%;
+  min-height: 150px;
+}
+.todo-title:disabled{
+  background-color: transparent;
+  border: none;
+}
+.todo-btns .btn{
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.del-btn{
+ color: #a1031d; 
+}
+.done-btn{
+  color: #8ac926; 
+ }
+ .edit-btn{
+  color: #0b2545; 
+ }
+.completed{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: var(--prim);
+  padding: 5px ;
+  border-radius: 4px;
+  font-size: 13px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ @media (max-width: 620px){
+  .input-field{
+    width: auto;
   }
-  to {
-    transform: rotate(360deg);
+ }
+ @media (max-width: 390px){
+  .btn{
+    padding: 8px 10px;
   }
-}
+ }
